@@ -20,13 +20,36 @@ loader.style.display="block";
 
     console.log(data);
 
+    //todo to display gifd
+
+    const display=data.data.map((gifs)=>{
+        const image=document.createElement("img");
+      image.src = gifs.images.fixed_height.url;
+      const container=document.createElement("div");
+       const title=document.createElement("p");
+       title.textContent=gifs.title;
+
+        container.append(image);
+        container.append(title);
+        wrapper.append(container);
+        container.classList.add(
+             "border-2",
+  "border-white",
+  "flex",
+  "flex-col",
+  "justify-center",
+  "items-center",
+  "w-72",
+  "h-96",
+  "mx-auto",
+  
+
+            
+            );
+    });
+   
+
    
 });
-// setTimeout(async() => {
-//     loader.style.display="none";
-//      const response=await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${userValue}`);
-//     const data=await response.json();
-//     console.log(data);
-  
-// }, 2000);
+
 

@@ -37,15 +37,19 @@ button {
 .wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  row-gap: 16px;
+  margin-left: 70px;
 }
 .container {
   background-color: #2b304d;
   display: flex;
   padding: 1em;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   margin: 1.5em;
   border-radius: 0.5em;
+  
 }
 .container img {
   width: 100%;
@@ -83,5 +87,11 @@ button {
 @media screen and (max-width: 576px) {
   .wrapper {
     grid-template-columns: 1fr;
+  
   }
+}
+
+.wrapper p{
+  color:white;
+
 }
