@@ -6,9 +6,13 @@ const btn= document.querySelector("#submit-btn");
 const loader= document.querySelector(".loader");
 const wrapper= document.querySelector(".wrapper");
 
+//todo button clicked
 btn.addEventListener("click",async()=>{
+   wrapper.innerHTML="";
+    loader.classList.remove("hidden");
     const userValue=searchBox.value;
-loader.style.display="block";
+    
+// loader.style.display="block";
 
  const response=await fetch(`https://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=${userValue}`);
   const data=await response.json();
@@ -16,11 +20,11 @@ loader.style.display="block";
   //todo new way
   await new Promise(resolve => {
     setTimeout(resolve, 2000)});
-   loader.style.display = "none";
+loader.classList.add("hidden");
 
     console.log(data);
 
-    //todo to display gifd
+    //todo to display gifs
 
     const display=data.data.map((gifs)=>{
         const image=document.createElement("img");
